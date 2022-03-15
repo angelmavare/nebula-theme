@@ -145,8 +145,9 @@ function nebula_scripts() {
 	wp_enqueue_style('nebula', get_template_directory_uri() . '/assets/scss/nebula.css', array(), '', 'all');
 
 	wp_enqueue_script( 'nebula-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
 	wp_enqueue_script( 'bootstrap-scripts', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'highlight', get_template_directory_uri() . '/assets/js/highlight.pack.js', array(), '', true );
+	wp_enqueue_script( 'nebula-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), '', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -181,3 +182,83 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/*------------------------------------*\
+	Login Admin
+\*------------------------------------*/
+
+function my_login_styles() { ?>
+    <style type="text/css">
+      #login h1 a, .login h1 a {
+      background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/icon-pixonauta.png);
+        height: 115px;
+        width: 115px;
+        background-size: cover;
+        background-repeat: no-repeat;
+	  }
+	  /*Hasta aqui se cambia el logo, lo demas es custom login*/
+	  #wp-submit{
+		background: #753BBD;
+		background-color: #753BBD;
+		text-shadow: 0 -1px 1px #753BBD, 1px 0 1px #753BBD, 0 1px 1px #753BBD, -1px 0 1px #753BBD;
+		border-color: #753BBD #753BBD #753BBD;
+		box-shadow: 0 1px 0 #753BBD;
+	  }
+	  body{
+		background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bg-login.png) !important;
+		background-repeat: no-repeat !important;
+		background-size: cover !important;
+	  }
+	  .login #backtoblog a, .login #nav a{
+		  color: white !important;
+	  }
+	  #login {
+		width: 320px;
+		padding: 5% 0 0 !important;
+		margin: auto;
+		}
+    </style>
+  <?php }//end my_login_styles()
+  add_action( 'login_enqueue_scripts', 'my_login_styles' );
+  function my_login_logo_url() {
+    return home_url();
+  }//end my_login_logo_url()
+  add_filter( 'login_headerurl', 'my_login_logo_url' );
+  function my_login_logo_url_title() {
+    return 'Pixonauta';
+  }//end my_login_logo_url_title()
+  add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+
+
+
+/*=============================================
+=            NavWalker ca			            =
+=============================================*/
+function register_navwalker(){
+	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+}
+add_action( 'after_setup_theme', 'register_navwalker' );
+
+register_nav_menus( array(
+    'primary' => __( 'Primary Menu', 'THEMENAME' ),
+) );
+
+
+/*=============================================
+=            SyntaxHighlighter Evolved			            =
+=============================================*/
+
+function ntz_fix_syntax_highlighter($content)
+{
+	return preg_replace('/&amp;([^;]+;)/', '&$1', $content);
+}
+
+add_filter('content_save_pre', 'ntz_fix_syntax_highlighter');
+add_filter('syntaxhighlighter_htmlresult', 'ntz_fix_syntax_highlighter');
+add_filter('syntaxhighlighter_precode', 'ntz_fix_syntax_highlighter');
+
+/*=============================================
+=            Custom Size thubnail			            =
+=============================================*/
+add_image_size( 'medium-recentpost', 338, 225, true );
+// This enables the function that lets you set new image sizes
