@@ -1,4 +1,4 @@
-<div class="w-100 footer-section" style="background: url('/assets/img/fondo-burbujas3.jpg');">
+<div class="w-100 footer-section" style="background: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/fondo-burbujas3.jpg');">
             <div class="container position-relative card-newsletter-desk p-0" style="height:100px">
                 <div class="footer-overlay">
 
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-                <img class="card-tag-footer" src="/assets/img/card-footer.svg" alt="pixonauta subscribe">
+                <img class="card-tag-footer" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/card-footer.svg" alt="pixonauta subscribe">
                 
             </div>
             
