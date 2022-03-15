@@ -19,6 +19,7 @@
                     'post_type' => 'post',
                     'post_status' => 'publish',
                     'posts_per_page' => 6,
+                    'offset' => 4
                     );
                     $arr_recent = new WP_Query( $args_recent );
                             
