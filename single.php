@@ -24,15 +24,20 @@ get_header();
 					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'nebula' ) . '</span> <span class="nav-title">%title</span>',
 				)
 			); */
-			
+			?>
 
+			<section class="container pt-5 pb-5">
+			<?php 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
-
+			?>
+			</section>
 			
 
+			
+		<?php 
 		endwhile; // End of the loop.
 		?>
 

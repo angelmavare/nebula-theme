@@ -13,6 +13,23 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <aside id="secondary" class="widget-area">
+	<!-- Begin Tags -->
+					<div class="pt-4 ">
+					<?php
+					/* $tags = wp_get_post_tags($post->ID);
+					$html = '<div class="after-post-tags">';
+					foreach ($tags as $tag) {
+						$tag_link = get_tag_link($tag->term_id);
+
+						$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug} p-1'><span class='badge bg-primary p-2 mb-1'>";
+						$html .= "{$tag->name}</span></a>";
+					}
+					$html .= '</div>';
+					echo $html; */
+					?>
+					<br>
+					</div>
+					<!-- End Tags -->
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

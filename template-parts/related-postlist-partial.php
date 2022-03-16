@@ -9,7 +9,7 @@
  */
 
 ?>
-<section class="mt-5 mb-5 pb-4 related-post">
+<section class="mt-1 mb-5 pb-4 related-post">
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col-md-12 text-center">
