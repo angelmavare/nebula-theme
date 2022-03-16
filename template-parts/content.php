@@ -96,11 +96,25 @@
 						?>
 
 					</div>
+					<!-- Begin Tags -->
+					<?php 
+							$tags = wp_get_post_tags($post->ID);
+							$html = '<div class="after-post-tags"><ul class="tags">';
+							foreach ( $tags as $tag ) {
+								$tag_link = get_tag_link( $tag->term_id );
+										 
+								$html .= "<li><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
+								$html .= "{$tag->name}</a></li>";
+							}
+							$html .= '</ul></div>';
+							echo $html;
+							?>
+							<!-- End Tags -->
 
 				</div>
 				<!--  SIDEBAR -->
 				<div class="col-md-3">
-					<? get_sidebar(); ?>
+					<?php get_sidebar(); ?>
 				</div>
 				<!-- END  SIDEBAR -->
 			</div>
