@@ -81,9 +81,8 @@
                     </div>
                     <!--  SIDEBAR -->
                     <div class="col-md-3">
-                        <aside>
+                        <?get_sidebar();?>
 
-                        </aside>
                     </div>
                     <!-- END  SIDEBAR -->
                 </div>

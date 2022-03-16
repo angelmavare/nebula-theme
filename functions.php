@@ -138,7 +138,7 @@ add_action( 'widgets_init', 'nebula_widgets_init' );
  * Enqueue scripts and styles.
  */
 function nebula_scripts() {
-	//wp_enqueue_style( 'nebula-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'nebula-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'nebula-style', 'rtl', 'replace' );
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/all.min.css', array(), '', 'all');
 

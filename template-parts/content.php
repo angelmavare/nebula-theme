@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying posts
  *
@@ -10,54 +11,106 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				nebula_posted_on();
-				nebula_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+	<!----BANNER----->
+	<section class="banner">
+		<div class="container bg-primary">
 
-	<?php nebula_post_thumbnail(); ?>
+			<div class="row single-post-banner">
+				<div class="col-md-12 p-0">
+					<div class="single-post-img">
+						<picture>
+							<img class="card-img-source" src="<?php echo $url_thumbnail = wp_get_attachment_url(get_post_thumbnail_id($post->ID), 'thumbnail'); ?>" alt="<?php the_title(); ?>">
+						</picture>
+						<div class="single-img-overlay-bg"></div>
+						<header class="content-text">
+							<!-- <span class="text-light-orange">Some text for title</span><span class="text-orange"></span> -->
+							<div class="text-orange">
+								<?php
+								$categories = get_the_category();
+								$separator = ', ';
+								$output = '';
+								if (!empty($categories)) {
+									foreach ($categories as $category) {
+										$output .= '<a class="text-orange fw-bold text-decoration-none" href="' . esc_url(get_category_link($category->term_id)) . '" alt="' . esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)) . '">' . esc_html($category->name) . '</a>' . $separator;
+									}
+									echo trim($output, $separator);
+								} ?>
+							</div>
 
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'nebula' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
+							<?php the_title('<h1 class="text-white">', '</h1>'); ?>
+							<div class="ux-meta-post mt-2">
+								<img class="ux-profile-sm d-none d-sm-inline-block" src="<?php print get_avatar_url(get_the_author_meta('user_email')); ?>" alt="<?php echo get_the_author(); ?>"><small class="ux-post-editor text-white"> Por <a class="link-profile text-white" href=""><?php echo get_the_author(); ?></a></small>
+								<a class="text-white text-decoration-none" href="<?php echo get_home_url() . '/' . get_the_date('Y/m/d'); ?>"><?php echo get_the_date(); ?></a>
+							</div>
+						</header>
+					</div>
 
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nebula' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
+				</div>
+			</div>
 
-	<footer class="entry-footer">
-		<?php nebula_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+
+
+		</div>
+
+	</section>
+	<!----END BANNER----->
+	<!----ENTRY----->
+	<section class="entry">
+		<div class="container">
+			<!----TITLE SECTION BAR----->
+			<div>
+				<div class="title-section">
+					<img class="title-section-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/card-gradient2.svg" alt="gradient">
+					<div class="line-gradient-title" style="height:21px;"></div>
+
+				</div>
+			</div>
+			<!----END TITLE SECTION BAR----->
+
+			<div class="row">
+				<div class="col-md-9">
+					<div class="entry-content">
+						<?php
+						the_content(
+							sprintf(
+								wp_kses(
+									/* translators: %s: Name of current post. Only visible to screen readers */
+									__('Continue reading<span class="screen-reader-text"> "%s"</span>', 'nebula'),
+									array(
+										'span' => array(
+											'class' => array(),
+										),
+									)
+								),
+								wp_kses_post(get_the_title())
+							)
+						);
+
+						wp_link_pages(
+							array(
+								'before' => '<div class="page-links">' . esc_html__('Pages:', 'nebula'),
+								'after'  => '</div>',
+							)
+						);
+						?>
+
+					</div>
+
+				</div>
+				<!--  SIDEBAR -->
+				<div class="col-md-3">
+					<? get_sidebar(); ?>
+				</div>
+				<!-- END  SIDEBAR -->
+			</div>
+
+		</div>
+
+
+
+
+	</section>
+	<!----END Entry----->
+
 </article><!-- #post-<?php the_ID(); ?> -->

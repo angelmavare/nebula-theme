@@ -20,13 +20,9 @@ get_header();
         <!----POSTLIST----->
         <?php get_template_part( 'template-parts/home-postlist-partial' ); ?>
         <!----END POSTLIST----->
-
-        <section>
-
-        </section>
 </main>
 	        
 
 <?php
-get_sidebar();
+
 get_footer();
