@@ -114,6 +114,7 @@
 					?>
 					<!-- End Tags -->
 
+					<?php get_template_part( 'template-parts/author-info-partial' ); ?>
 				</div>
 				<!--  SIDEBAR -->
 				<div class="col-md-3">
