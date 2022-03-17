@@ -6,7 +6,15 @@
                                 <div class="col-md-4 post-feed">
                                     <a href="<?php the_permalink(); ?>" class="h-100  post-bottom-left post-top-left">
                                         <picture>
-                                            <img class="post-img" src="<?php echo $url_thumbnail = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' );?>" alt="">
+											<?php $url_thumbnail = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' ); 
+											if($url_thumbnail):
+												$url_thumbnail;
+											else:
+												$url_thumbnail = get_stylesheet_directory_uri().'/assets/img/img-test-1.jpg';
+											endif;
+											
+											?>
+                                            <img class="post-img" src="<?php echo $url_thumbnail; ?>" alt="">
                                         </picture>
                                         
                                     </a>
@@ -14,11 +22,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <div class="mb-2">
-                                            <a class="text-orange text-decoration-none" href="<?php echo get_home_url().'/'.get_the_date('Y/m/d'); ?>"><?php echo get_the_date(); ?></a><span class="text-orange"></span>
-                                            
-                                            
-                                        </div>
+                                        
                                         
                                         <a href="<?php the_permalink(); ?>" class="link-text">
                                             <h5 class="card-title" style="text-decoration: none;"><?php the_title(); ?></h5>
@@ -26,9 +30,7 @@
                                             <p class="card-text"><?php echo substr(get_the_excerpt(), 0, 300); ?>
                                             </p>
                                         </a>
-                                        <div class="ux-meta-post mt-2">
-                                        <img class="ux-profile-sm d-none d-sm-inline-block" src="<?php print get_avatar_url(get_the_author_meta('user_email')); ?>" alt="<?php echo get_the_author(); ?>"><small class="ux-post-editor"> Por <a class="link-profile" href="<?php echo get_home_url(); ?>/author/<?php echo get_the_author_meta('user_nicename'); ?>"><?php echo get_the_author(); ?></a></small>
-                                         </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -41,7 +43,15 @@
                                 <div class="col-md-4 post-feed">
                                     <a href="<?php the_permalink(); ?>" class="h-100  post-bottom-left post-top-left">
                                         <picture>
-                                            <img class="post-img" src="<?php echo $url_thumbnail = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' );?>" alt="">
+											<?php $url_thumbnail = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' ); 
+											if($url_thumbnail):
+												$url_thumbnail;
+											else:
+												$url_thumbnail = get_stylesheet_directory_uri().'/assets/img/img-test-1.jpg';
+											endif;
+											
+											?>
+                                            <img class="post-img" src="<?php echo $url_thumbnail; ?>" alt="">
                                         </picture>
                                         
                                     </a>

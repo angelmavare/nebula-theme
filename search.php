@@ -1,53 +1,65 @@
 <?php
-/**
- * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package Nebula_Theme
- */
 
 get_header();
 ?>
+<?php
+/*   $currCat = get_category(get_query_var('cat'));
+  $cat_name = $currCat->name;
+  $cat_id   = get_cat_ID( $cat_name ); */
+?>
 
-	<main id="primary" class="site-main">
+<main>
 
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'nebula' ), '<span>' . get_search_query() . '</span>' );
+                <!----POSTLIST----->
+        <section class="postlist">
+            <div class="container">
+                <!----TITLE SECTION BAR----->
+                <div class="mt-5">
+                    <div class="title-section">
+                        <img class="title-section-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/LIST-1.svg" alt="gradient">
+                        <div class="line-gradient-title"></div>
+                        <div class="content-title-section">
+						<?php
+						/* translators: %s: search query. */
+						if($wp_query->post_count!=1) :
+						echo '<h2 class="text-white d-inline-block">Se encontraron <strong>'.$wp_query->post_count.'</strong> resultados para:</h2>';
+						else :
+						echo '<h2 class="text-white d-inline-block">Se encontró <strong>'.$wp_query->post_count.'</strong> resultado para:</h2>'.'" "';
+						endif;
+						echo '<h3 class="text-white d-inline-block" style="padding-left:10px;"><strong> ' . get_search_query() . '</strong></h3>';
 					?>
-				</h1>
-			</header><!-- .page-header -->
+							
+                            
+                        </div>
+                    </div>
+                </div>
+                <!----END TITLE SECTION BAR----->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+                <div class="row">
+                    <div class="col-md-9">
+                    <?php get_template_part( 'template-parts/content' ); ?>
+					<?php get_template_part( 'template-parts/pagination' ); ?>
+                    </div>
+                    <!--  SIDEBAR -->
+                    <div class="col-md-3">
+                        <?php get_sidebar(); ?>
+                    </div>
+                    <!-- END  SIDEBAR -->
+                </div>
+                
+            </div>
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
 
-			endwhile;
 
-			the_posts_navigation();
 
-		else :
+        </section>
+        <!----END POSTLIST----->
 
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
+        <!--?php get_template_part( 'template-parts/home-postlist-partial' ); ?-->
+        <!----END POSTLIST----->
+</main>
+	        
 
 <?php
-get_sidebar();
+
 get_footer();
