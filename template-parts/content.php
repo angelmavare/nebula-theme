@@ -13,7 +13,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<!----BANNER----->
-	<section class="banner">
+	<section class="banner pb-4">
 		<div class="container bg-primary">
 
 			<div class="row single-post-banner">
@@ -60,7 +60,10 @@
 		<div class="container">
 			<!----TITLE SECTION BAR----->
 			<div>
-				<div class="title-section">
+				<div>
+					<?php dynamic_sidebar( 'social-post' ); ?>
+				</div>
+				<div class="title-section mt-2">
 					<img class="title-section-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/card-gradient2.svg" alt="gradient">
 					<div class="line-gradient-title" style="height:21px;"></div>
 
@@ -103,7 +106,7 @@
 					foreach ($tags as $tag) {
 						$tag_link = get_tag_link($tag->term_id);
 
-						$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug} p-1'><span class='badge bg-primary p-2'>";
+						$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'><span class='badge bg-primary p-2 m-1'>";
 						$html .= "{$tag->name}</span></a>";
 					}
 					$html .= '</div>';

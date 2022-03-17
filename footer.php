@@ -28,7 +28,7 @@
 					'menu'            => 'politicas',
 					'theme_location'  => 'primary',
 					'depth'           => 2,                     
-					'menu_class'      => 'navbar-nav mr-auto menu-footer',
+					'menu_class'      => 'navbar-nav mr-auto m-0 menu-footer',
 					'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
 					'walker'          => new WP_Bootstrap_Navwalker()
 				) );
@@ -45,7 +45,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light bg-light text-primary">
                     
                     <div class="w-100 text-center">
-					<ul class="navbar-nav d-inline-block">
+					<ul class="navbar-nav d-inline-block m-0">
                         <!-- <li class="nav-item active">
                           <a class="nav-link text-primary" href="#">Inicio <span class="sr-only">(current)</span></a>
                         </li>
@@ -78,7 +78,7 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-light right-footer-nav">
                     
                     <div >
-                      <ul class="navbar-nav ml-auto">
+                      <ul class="navbar-nav ml-auto m-0">
                         <li class="nav-item active">
                             <span class="navbar-text text-primary">
                                 Hecho con <i class="fa-solid fa-heart"></i> por <a href="<?php echo get_home_url();?>" class="fw-bold text-primary text-decoration-none" >Pixonauta</a>

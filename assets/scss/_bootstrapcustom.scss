@@ -10,7 +10,8 @@ $theme-colors: (
   "orange":#FF5300,
   "primary":#753BBD,
   "light-orange":#ff7f3e,
-  "darkprimary":#280f46
+  "darkprimary":#280f46,
+  "gray": #fafafa
 );
 
 $primary: #753BBD;
@@ -19,7 +20,7 @@ $darkprimary:#280f46;
 $orange: #FF5300;
 $light-orange: #ff7f3e;
 /* Other theme colors */
-$gray: #5E5E5E; //#7C7C7C
+$gray: #fafafa; //#7C7C7C
 $gradient: linear-gradient(79.18deg, #49A0CE -0.43%, #7C53BE 22.82%, #C45497 50.61%, #7C53BE 73.76%, #49A0CE 98.43%);
 $gradient-hover: linear-gradient(180deg, #51D6D6 -44.83%, #3E35A6 140.85%);
 //$dark-gradient: linear-gradient(79.18deg, #49A0CE -0.43%, #7C53BE 22.82%, #C45497 50.61%, #7C53BE 73.76%, #49A0CE 98.43%);

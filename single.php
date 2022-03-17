@@ -26,13 +26,16 @@ get_header();
 			); */
 			?>
 
-			<section class="container pt-5 pb-5">
-			<?php 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-			?>
+			<section class="mt-4 pt-4 pb-4 mb-4 bg-gray">
+				<div class="container">
+				<?php 
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+				?>
+				</div>
+			
 			</section>
 			
 
