@@ -303,3 +303,45 @@ add_filter('syntaxhighlighter_precode', 'ntz_fix_syntax_highlighter');
 =============================================*/
 add_image_size( 'medium-recentpost', 338, 225, true );
 // This enables the function that lets you set new image sizes
+
+
+/*=============================================
+=            Custom Pagination			            =
+=============================================*/
+/*Pagination (Paginacion)*/ 
+
+function bootstrap_pagination( $echo = true ) {
+	global $wp_query;
+
+	$big = 999999999; // need an unlikely integer
+
+	$pages = paginate_links( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'total' => $wp_query->max_num_pages,
+			'type'  => 'array',
+			'prev_next'   => true,
+			'prev_text'    => __('« Anterior'),
+			'next_text'    => __('Siguiente »'),
+		)
+	);
+
+	if( is_array( $pages ) ) {
+		$paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
+
+		$pagination = '<ul class="pagination">';
+
+		foreach ( $pages as $page ) {
+			$pagination .= "<li class='page-item'>$page</li>";
+		}
+
+		$pagination .= '</ul>';
+
+		if ( $echo ) {
+			echo $pagination;
+		} else {
+			return $pagination;
+		}
+	}
+}

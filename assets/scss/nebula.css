@@ -12884,4 +12884,32 @@ footer .right-footer-nav {
 .pagination .page-link {
   border: none;
 }
+
+/*******************************************
+                Pagination
+********************************************/
+.page-item.active .page-link, .page-numbers.current {
+  background-color: #753BBD !important;
+  border-color: #753BBD !important;
+  color: #fff;
+}
+
+.page-numbers {
+  padding: 0.375rem 0.75rem;
+  text-decoration: none;
+}
+
+.page-numbers:hover {
+  z-index: 2;
+  color: #5e2f97;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.page-numbers.current:hover {
+  z-index: 2;
+  color: white;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
 /*# sourceMappingURL=nebula.css.map */
