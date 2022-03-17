@@ -12888,6 +12888,18 @@ footer .right-footer-nav {
 /*******************************************
                 Pagination
 ********************************************/
+.pagination {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.pagination li {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 .page-item.active .page-link, .page-numbers.current {
   background-color: #753BBD !important;
   border-color: #753BBD !important;

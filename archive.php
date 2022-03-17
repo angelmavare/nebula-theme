@@ -1,51 +1,57 @@
 <?php
-/**
- * The template for displaying archive pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Nebula_Theme
- */
 
 get_header();
 ?>
+<?php
+/*   $currCat = get_category(get_query_var('cat'));
+  $cat_name = $currCat->name;
+  $cat_id   = get_cat_ID( $cat_name ); */
+?>
 
-	<main id="primary" class="site-main">
+<main>
 
-		<?php if ( have_posts() ) : ?>
+                <!----POSTLIST----->
+        <section class="postlist">
+            <div class="container">
+                <!----TITLE SECTION BAR----->
+                <div class="mt-5">
+                    <div class="title-section">
+                        <img class="title-section-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/LIST-1.svg" alt="gradient">
+                        <div class="line-gradient-title"></div>
+                        <div class="content-title-section">
+							<?php the_archive_title( '<h2 class="text-white">', '</h2>' );
+									the_archive_description( '<div class="text-white">', '</div>' );?>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!----END TITLE SECTION BAR----->
 
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+                <div class="row">
+                    <div class="col-md-9">
+                    <?php get_template_part( 'template-parts/content' ); ?>
+					<?php get_template_part( 'template-parts/pagination' ); ?>
+                    </div>
+                    <!--  SIDEBAR -->
+                    <div class="col-md-3">
+                        <?php get_sidebar(); ?>
+                    </div>
+                    <!-- END  SIDEBAR -->
+                </div>
+                
+            </div>
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
 
-			endwhile;
 
-			the_posts_navigation();
+        </section>
+        <!----END POSTLIST----->
 
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
+        <!--?php get_template_part( 'template-parts/home-postlist-partial' ); ?-->
+        <!----END POSTLIST----->
+</main>
+	        
 
 <?php
-get_sidebar();
+
 get_footer();

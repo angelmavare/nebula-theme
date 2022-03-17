@@ -2,7 +2,7 @@
     <div class="container">
         <!----TITLE SECTION BAR----->
         <div>
-            <div class="title-section">
+            <div class="title-section mt-5">
                 <img class="title-section-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/card-gradient2.svg" alt="gradient">
                 <div class="line-gradient-title"></div>
                 <div class="content-title-section">
@@ -44,7 +44,7 @@
                                     <div class="card-body">
                                         <div class="mb-2">
                                             <a class="text-orange text-decoration-none" href="<?php echo get_home_url() . '/' . get_the_date('Y/m/d'); ?>"><?php echo get_the_date(); ?></a><span class="text-orange">/</span>
-                                            <div class="text-orange">
+                                            <div class="text-orange d-inline-block">
                                                 <?php
                                                 $categories = get_the_category();
                                                 $separator = ', ';
