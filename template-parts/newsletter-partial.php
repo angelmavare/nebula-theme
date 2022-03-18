@@ -4,8 +4,16 @@
 
                 </div>
                 <div class="row w-100 m-0">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 pt-4 pb-4">
-                    <?php dynamic_sidebar( 'newsletter-1' ); ?>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 ">
+                        <?php    
+                        
+                        if ( ! is_active_sidebar( 'sidebar-1' ) ):
+                        ?>
+                        <div class="pt-4 pb-4 d-none d-xl-block">
+
+                        <?php dynamic_sidebar( 'newsletter-1' ); ?>
+                        </div>
+                        <?php endif; ?>
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6" style="z-index:10">
                         <div class="newsletter-section">

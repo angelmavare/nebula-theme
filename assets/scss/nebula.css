@@ -12097,6 +12097,8 @@ ul.tags li a {
   width: 100%;
   position: absolute;
   top: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .post-feed img {
@@ -12105,8 +12107,13 @@ ul.tags li a {
 }
 
 .post-feed:hover img {
-  width: 120%;
-  height: 120%;
+  width: 140%;
+  height: 140%;
+}
+
+.secondary-card-text.post-feed:hover .overlay-bg {
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
 }
 
 .serif-text {
@@ -12292,6 +12299,14 @@ ul.tags li a {
     padding-top: 0px;
     padding-bottom: 30px;
   }
+}
+
+.banner .blur-container {
+  -webkit-backdrop-filter: blur(23px);
+          backdrop-filter: blur(23px);
+  padding: 25px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .banner .container {
@@ -12565,8 +12580,8 @@ ul.tags li a {
 }
 
 .horizontal-post-feed:hover img.post-img {
-  width: 120%;
-  height: 120%;
+  width: 140%;
+  height: 140%;
 }
 
 .horizontal-post-feed .post-img-link {
@@ -12671,13 +12686,14 @@ footer .footer-section .card-tag-footer {
 
 @media (min-width: 576px) {
   footer .footer-section .card-tag-footer {
-    right: -5.5% !important;
+    display: none;
   }
 }
 
 @media (min-width: 768px) {
   footer .footer-section .card-tag-footer {
     right: 8% !important;
+    display: block;
   }
 }
 
@@ -12794,6 +12810,8 @@ footer .right-footer-nav {
   position: absolute;
   top: 0;
   border-radius: 10px;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
 }
 
 @media (max-width: 768px) {

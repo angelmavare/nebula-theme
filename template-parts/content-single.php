@@ -24,25 +24,29 @@
 						</picture>
 						<div class="single-img-overlay-bg"></div>
 						<header class="content-text">
-							<!-- <span class="text-light-orange">Some text for title</span><span class="text-orange"></span> -->
-							<div class="text-orange">
-								<?php
-								$categories = get_the_category();
-								$separator = ', ';
-								$output = '';
-								if (!empty($categories)) {
-									foreach ($categories as $category) {
-										$output .= '<a class="text-orange fw-bold text-decoration-none" style="text-shadow: 0px 0px 10px black;" href="' . esc_url(get_category_link($category->term_id)) . '" alt="' . esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)) . '">' . esc_html($category->name) . '</a>' . $separator;
-									}
-									echo trim($output, $separator);
-								} ?>
-							</div>
+							
+								<!-- <span class="text-light-orange">Some text for title</span><span class="text-orange"></span> -->
+								<div class="text-orange">
+									<?php
+									$categories = get_the_category();
+									$separator = ', ';
+									$output = '';
+									if (!empty($categories)) {
+										foreach ($categories as $category) {
+											$output .= '<a class="text-orange fw-bold text-decoration-none" style="text-shadow: 0px 0px 10px black;" href="' . esc_url(get_category_link($category->term_id)) . '" alt="' . esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)) . '">' . esc_html($category->name) . '</a>' . $separator;
+										}
+										echo trim($output, $separator);
+									} ?>
+								</div>
 
-							<?php the_title('<h1 class="text-white">', '</h1>'); ?>
-							<div class="ux-meta-post mt-2">
-								<img class="ux-profile-sm d-none d-sm-inline-block" src="<?php print get_avatar_url(get_the_author_meta('user_email')); ?>" alt="<?php echo get_the_author(); ?>"><small class="ux-post-editor text-white"> Por <a class="link-profile text-white" href="<?php echo get_home_url(); ?>/author/<?php echo get_the_author_meta('user_nicename'); ?>"><?php echo get_the_author(); ?></a> |</small>
-								<a class="text-white text-decoration-none" href="<?php echo get_home_url() . '/' . get_the_date('Y/m/d'); ?>"><?php echo get_the_date(); ?></a>
-							</div>
+								<?php the_title('<h1 class="text-white" style="text-shadow: 0px 0px 10px black;">', '</h1>'); ?>
+								<div class="ux-meta-post mt-2">
+									<img class="ux-profile-sm d-none d-sm-inline-block" src="<?php print get_avatar_url(get_the_author_meta('user_email')); ?>" alt="<?php echo get_the_author(); ?>">
+									<small class="ux-post-editor text-white" style="text-shadow: 0px 0px 10px black;"> Por <a class="link-profile text-white" href="<?php echo get_home_url(); ?>/author/<?php echo get_the_author_meta('user_nicename'); ?>"><?php echo get_the_author(); ?></a> |</small>
+									<a class="text-white text-decoration-none" style="text-shadow: 0px 0px 10px black;" href="<?php echo get_home_url() . '/' . get_the_date('Y/m/d'); ?>"><?php echo get_the_date(); ?></a>
+								</div>
+							
+
 						</header>
 					</div>
 
@@ -61,7 +65,7 @@
 			<!----TITLE SECTION BAR----->
 			<div>
 				<div>
-					<?php dynamic_sidebar( 'social-post' ); ?>
+					<?php dynamic_sidebar('social-post'); ?>
 				</div>
 				<div class="title-section mt-2">
 					<img class="title-section-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/SINGLE-4.svg" alt="gradient">
@@ -114,7 +118,7 @@
 					?>
 					<!-- End Tags -->
 
-					<?php get_template_part( 'template-parts/author-info-partial' ); ?>
+					<?php get_template_part('template-parts/author-info-partial'); ?>
 				</div>
 				<!--  SIDEBAR -->
 				<div class="col-md-3">
