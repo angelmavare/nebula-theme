@@ -1,4 +1,4 @@
-<div class="row mt-5">
+<div class="row mt-4">
     <div class="col-md-12">
 
         <article class="card mb-4 horizontal-post-feed">

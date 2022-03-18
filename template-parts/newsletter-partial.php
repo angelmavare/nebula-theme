@@ -10,15 +10,17 @@
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6" style="z-index:10">
                         <div class="newsletter-section">
                             <p><strong>¿Quieres se parte de la tripulación?</strong><br>
-                                Suscribete para mantenerte informado</p>
-                                <form>
+                                Suscríbete para mantenerte informado</p>
+                                <?php echo do_shortcode( '[mc4wp_form id="412"]' ); ?>
+
+                                <!-- <form>
                                     <div class="mb-3 pt-2">
   
                                       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electrónico" style="max-width: 300px;margin: auto;">
                                       
                                     </div>
                                     <button type="submit" class="btn btn-gradient mt-2">Me apunto</button>
-                                  </form>
+                                  </form> -->
                         </div>
                     </div>
                 </div>
