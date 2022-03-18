@@ -16,11 +16,11 @@ get_header();
                 <!----TITLE SECTION BAR----->
                 <div class="mt-5">
                     <div class="title-section">
-                        <img class="title-section-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/LIST-1.svg" alt="gradient">
+                        <img class="title-section-icon d-none d-md-block" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/LIST-1.svg" alt="gradient">
                         <div class="line-gradient-title"></div>
                         <div class="content-title-section">
 							<?php the_archive_title( '<h2 class="text-white">', '</h2>' );
-									the_archive_description( '<div class="text-white">', '</div>' );?>
+									/* the_archive_description( '<div class="text-white">', '</div>' ); */?>
                             
                         </div>
                     </div>

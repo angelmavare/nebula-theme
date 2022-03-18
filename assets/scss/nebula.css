@@ -12592,6 +12592,7 @@ ul.tags li a {
 .horizontal-post-feed .card-title {
   color: #000000;
   text-decoration: none !important;
+  font-weight: 700;
 }
 
 .horizontal-post-feed .card-text {
@@ -12869,6 +12870,7 @@ footer .right-footer-nav {
 .vertical-post-related .card-title {
   color: #000000;
   text-decoration: none !important;
+  font-weight: 700;
 }
 
 .vertical-post-related .card-text {

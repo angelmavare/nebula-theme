@@ -40,7 +40,7 @@
 
 							<?php the_title('<h1 class="text-white">', '</h1>'); ?>
 							<div class="ux-meta-post mt-2">
-								<img class="ux-profile-sm d-none d-sm-inline-block" src="<?php print get_avatar_url(get_the_author_meta('user_email')); ?>" alt="<?php echo get_the_author(); ?>"><small class="ux-post-editor text-white"> Por <a class="link-profile text-white" href=""><?php echo get_the_author(); ?></a> |</small>
+								<img class="ux-profile-sm d-none d-sm-inline-block" src="<?php print get_avatar_url(get_the_author_meta('user_email')); ?>" alt="<?php echo get_the_author(); ?>"><small class="ux-post-editor text-white"> Por <a class="link-profile text-white" href="<?php echo get_home_url(); ?>/author/<?php echo get_the_author_meta('user_nicename'); ?>"><?php echo get_the_author(); ?></a> |</small>
 								<a class="text-white text-decoration-none" href="<?php echo get_home_url() . '/' . get_the_date('Y/m/d'); ?>"><?php echo get_the_date(); ?></a>
 							</div>
 						</header>

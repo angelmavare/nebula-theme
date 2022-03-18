@@ -12,9 +12,7 @@
 <section class="mt-1 mb-5 pb-4 related-post">
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col-md-12 text-center">
-                <h3><strong>Entradas relacionadas</strong></h3>
-            </div>
+            
 
             <?php
             $categories = get_the_category();
@@ -41,8 +39,17 @@
                 'post__not_in' => array(get_the_ID()),
             );
             $arr_relacionados = new WP_Query($args_relacionados);
-            if ($arr_relacionados->have_posts()) :    ?>
+
+            
+            if ($arr_relacionados->have_posts()) :    
+                echo '<div class="col-md-12 text-center">
+                <h3><strong>Artículos relacionados</strong></h3>
+            </div>';
+            
+            ?>
+            
                 <?php while ($arr_relacionados->have_posts()) :
+                   
                     $arr_relacionados->the_post();
                 ?>
                     <div class="col">
