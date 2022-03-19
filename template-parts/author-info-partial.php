@@ -2,7 +2,7 @@
     <div class="col-md-12">
 
         <article class="card mb-4 horizontal-post-feed">
-            <div class="row g-0">
+            <div class="row g-0 pt-3 pb-3">
                 <div class="col-md-2 d-inline-flex p-2 pl-4 pr-4 justify-content-center">
                     <div style="align-self:center">
                         <a href="<?php echo get_home_url(); ?>/author/<?php echo get_the_author_meta('user_nicename'); ?>" style="border-radius:50px; display:inline-block" class="">
@@ -38,7 +38,8 @@
                         </a>
                         <?php if (is_single()) : ?>
                             <div class="mb-2">
-                                <a class="text-orange text-decoration-none" href="#"><?php echo get_the_modified_date(); ?></a><span class="text-orange">
+                                <span class="text-orange">Editado el:</span>
+                                <a class="text-orange text-decoration-none" href="<?php echo get_home_url() . '/' . get_the_date('Y/m/d'); ?>"><?php echo get_the_modified_date(); ?></a><span class="text-orange">
                             </div>
                         <?php endif; ?>
 

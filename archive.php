@@ -19,11 +19,29 @@ get_header();
                         <img class="title-section-icon d-none d-md-block" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/LIST-4.svg" alt="gradient">
                         <div class="line-gradient-title"></div>
                         <div class="content-title-section">
-							<?php the_archive_title( '<h2 class="text-white">', '</h2>' );
+							<?php /* the_archive_title( '<h2 class="text-white">', '</h2>' ); */
 									/* the_archive_description( '<div class="text-white">', '</div>' ); */?>
-                            
+									<?php 
+									
+									if(is_category()):
+									echo '<h2 class="text-white">'.str_replace('Categoría: ','', get_the_archive_title())."</h2>";
+									elseif(is_date()):
+										echo '<h2 class="text-white">'.str_replace('Día: ','', get_the_archive_title())."</h2>";
+									elseif(is_tag()):
+										echo '<h2 class="text-white">'.str_replace('Etiqueta: ','', get_the_archive_title())."</h2>";
+									elseif(is_author()):
+										echo '<h2 class="text-white">'.str_replace('Autor: ','', get_the_archive_title())."</h2>";
+									endif;
+									?>
+									
                         </div>
                     </div>
+					
+					<?php 
+					if(is_author()):
+						get_template_part( 'template-parts/author-info-partial' ); 
+					endif;
+					?>
                 </div>
                 <!----END TITLE SECTION BAR----->
 
