@@ -15,7 +15,9 @@
 
 <!----END WRAPPER----->
 <footer>
+		
 		<?php get_template_part( 'template-parts/newsletter-partial' ); ?>
+		
         <div class="row w-100 copyright-section" >
             <!-- Grid column -->
             <div class="col-md-4">

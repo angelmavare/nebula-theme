@@ -1,4 +1,4 @@
-<div class="w-100 footer-section" style="background: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/fondo-burbujas3.jpg');">
+<div class="w-100 footer-section <?php if(is_404()): echo "mt-0"; endif;?>" style="background: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/fondo-burbujas3.jpg');">
             <div class="container position-relative card-newsletter-desk p-0" style="height:100px">
                 <div class="footer-overlay">
 
