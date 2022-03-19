@@ -34,6 +34,7 @@
                                     
                                         
                                     <span class="text-light-orange text-decoration-none"><?php echo get_the_date(); ?></span><span class="text-light-orange">/</span>
+                                    <div class="d-inline-block text-orange">
 									<?php 
 									$categories = get_the_category();
 									$separator = ' , ';
@@ -44,6 +45,7 @@
 										}
 										echo trim( $output, $separator );
 									} ?>
+                                    </div>
 									<!-- <span class="text-light-orange fw-bold text-decoration-none">Categoria</span> -->
                                     <h1 class="text-white"><?php the_title(); ?></h1>
                                     <p class="text-white serif-text"><?php echo substr(get_the_excerpt(), 0,600)."... "?></p>
