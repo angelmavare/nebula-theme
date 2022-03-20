@@ -77,7 +77,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							'theme_location'    => 'primary',
 							'depth'             => 2,
 							'container'         => 'div',
-							'container_class'   => 'collapse navbar-collapse',
+							'container_class'   => 'main-menu',
 							'container_id'      => 'bs-example-navbar-collapse-1',
 							'menu_class'        => 'nav navbar-nav',
 							'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
