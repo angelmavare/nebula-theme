@@ -21,7 +21,7 @@ get_header();
                         <img class="title-section-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/LIST-1.svg" alt="gradient">
                         <div class="line-gradient-title"></div>
                         <div class="content-title-section">
-                            <h2 class="text-white">Lista de publicaciones</h2>
+                            <h2 class="text-white">Artículos</h2>
                         </div>
                     </div>
                 </div>
