@@ -69,7 +69,7 @@
 			<!----TITLE SECTION BAR----->
 			<div>
 				<div>
-					<?php dynamic_sidebar('social-post'); ?>
+					
 				</div>
 				<div class="title-section mt-2">
 					<img class="title-section-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/SINGLE-4.svg" alt="gradient">
