@@ -49,7 +49,7 @@ get_header();
 				while ($arr_recent->have_posts()) :
 					$arr_recent->the_post();
 				?>
-					<div class="col-md-4">
+					<div class="col-md-4 mb-4">
 						<div class="card h-100 vertical-post-related">
 							<div class="post-feed">
 								<a class="post-img-link" href="<?php the_permalink(); ?>">

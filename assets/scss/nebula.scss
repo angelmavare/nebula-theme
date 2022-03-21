@@ -327,6 +327,11 @@ ul.tags li a{
             border-top-right-radius:10px;
             border-bottom-left-radius: 10px;
             border-bottom-right-radius:10px;
+            @media (max-width: 768px){
+                padding-right: 5px;
+                padding-left: 5px;
+                padding-top: 10px;
+            }
             .principal-card-text{
                 display: flex;
                 padding: 30px;
@@ -334,16 +339,27 @@ ul.tags li a{
                 border-bottom-right-radius:10px;
                 justify-content: center;
                 @media (max-width: 768px){
-                    border-top-right-radius:0px;
-                    border-bottom-right-radius:0px;
+                    /* border-top-right-radius:0px;
+                    border-bottom-right-radius:0px; */
+
+                    border-radius: 0px 0px 10px 10px;
                 }
                 .content-text{
                     align-self: center;
                     text-decoration: none;
                 }
             }
+            .principal-card-img{
+                @media (max-width: 768px){
+                    height: 45vh;
+                }
+            }
             .principal-card-img img{
                 transition: all 0.5s;
+                @media (max-width: 768px){
+                    border-radius: 10px 10px 0px 0px;
+                }
+                
             }
             &:hover > .principal-card-img img{
                 width: 120%;
@@ -538,6 +554,10 @@ ul.tags li a{
     }
     .post-feed a{
         padding: 66.25% 0 0 0;
+        @media (max-width: 768px){
+            border-radius: 10px 10px 0 0;
+        }
+        
     }
     img.post-img{
         transition: all 0.5s;
