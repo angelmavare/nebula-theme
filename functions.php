@@ -166,7 +166,7 @@ function nebula_scripts() {
 	wp_style_add_data( 'nebula-style', 'rtl', 'replace' );
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/all.min.css', array(), '', 'all');
 
-	wp_enqueue_style('nebula', get_template_directory_uri() . '/assets/scss/nebula.css', array(), '', 'all');
+	wp_enqueue_style('nebula', get_template_directory_uri() . '/assets/scss/nebula.css', array(), '1.0.0', 'all');
 
 	wp_enqueue_script( 'nebula-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'bootstrap-scripts', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), _S_VERSION, true );

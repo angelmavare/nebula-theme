@@ -17,7 +17,7 @@
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6" style="z-index:10">
                         <div class="newsletter-section">
-                            <p><strong>¿Quieres se parte de la tripulación?</strong><br>
+                            <p><strong>¿Quieres ser parte de la tripulación?</strong><br>
                                 Suscríbete para mantenerte informado</p>
                                 <?php echo do_shortcode( '[mc4wp_form id="412"]' ); ?>
 
