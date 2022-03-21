@@ -43,7 +43,7 @@
 								<div class="ux-meta-post mt-2">
 									<img class="ux-profile-sm d-none d-sm-inline-block" src="<?php print get_avatar_url(get_the_author_meta('user_email')); ?>" alt="<?php echo get_the_author(); ?>">
 									<small class="ux-post-editor text-white" style="text-shadow: 0px 0px 10px black;"> Por <a class="link-profile text-white" href="<?php echo get_home_url(); ?>/author/<?php echo get_the_author_meta('user_nicename'); ?>"><?php echo get_the_author(); ?></a> | Editado el: </small>
-									<a class="text-white text-decoration-none" style="text-shadow: 0px 0px 10px black;" href="<?php echo get_home_url() . '/' . get_the_date('Y/m/d'); ?>"><?php echo get_the_date(); ?></a>
+									<a class="text-white text-decoration-none" style="text-shadow: 0px 0px 10px black;" href="<?php echo get_home_url() . '/' . get_the_date('Y/m/d'); ?>"><?php echo get_the_modified_date(); ?></a>
 								</div>
 							
 
