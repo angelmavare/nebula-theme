@@ -11970,6 +11970,12 @@ ul.tags li a {
   margin: 3px;
 }
 
+blockquote {
+  background: ghostwhite;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 .entry-content h2, .entry-content .h2 {
   margin-top: 2rem !important;
   margin-bottom: 1rem !important;
