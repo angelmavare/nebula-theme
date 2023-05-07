@@ -21,16 +21,23 @@
                         <a href="<?php echo get_home_url(); ?>/author/<?php echo get_the_author_meta('user_nicename'); ?>" class="link-text">
                             <h5 class="card-title mb-0" style="text-decoration: none;"><?php echo get_the_author_meta('display_name'); ?>
                                 <?php
+                               
+                                $website = get_the_author_meta('user_url', $post->post_author);
                                 $twitter = get_the_author_meta('twitter', $post->post_author);
                                 $facebook = get_the_author_meta('facebook', $post->post_author);
                                 $instagram = get_the_author_meta('instagram', $post->post_author);
                                 $linkedin = get_the_author_meta('linkedin', $post->post_author);
+                                $behance = get_the_author_meta('myspace', $post->post_author);
+                                $github = get_the_author_meta('soundcloud', $post->post_author);
                                 ?>
-                                <?php if ($twitter) : ?><a href="<?php echo $twitter; ?>" rel="nofollow" target="_blank"><i class="fab fa-twitter white-text"> </i></a><?php endif; ?>
-                                <?php if ($facebook) : ?> <a href="<?php echo $facebook; ?>" rel="nofollow" target="_blank"><i class="fab fa-facebook-f white-text"> </i></a><?php endif; ?>
-                                <?php if ($instagram) : ?> <a href="<?php echo $instagram; ?>" rel="nofollow" target="_blank"><i class="fa-brands fa-instagram"></i></a><?php endif; ?>
-                                <?php if ($linkedin) : ?> <a href="<?php echo $linkedin; ?>" rel="nofollow" target="_blank"><i class="fa-brands fa-linkedin"> </i></a><?php endif; ?>
-                                    
+                                <?php if ($website) : ?><a href="<?php echo $website; ?>" class="px-1" rel="nofollow" target="_blank"><i class="fa-solid fa-earth-americas"></i></a><?php endif; ?>
+                                <?php if ($twitter) : ?><a href="<?php echo $twitter; ?>" class="px-1" rel="nofollow" target="_blank"><i class="fab fa-twitter white-text"> </i></a><?php endif; ?>
+                                <?php if ($facebook) : ?> <a href="<?php echo $facebook; ?>" class="px-1" rel="nofollow" target="_blank"><i class="fab fa-facebook-f white-text"> </i></a><?php endif; ?>
+                                <?php if ($instagram) : ?> <a href="<?php echo $instagram; ?>" class="px-1" rel="nofollow" target="_blank"><i class="fa-brands fa-instagram"></i></a><?php endif; ?>
+                                <?php if ($linkedin) : ?> <a href="<?php echo $linkedin; ?>" class="px-1" rel="nofollow" target="_blank"><i class="fa-brands fa-linkedin"> </i></a><?php endif; ?>
+                                <?php if ($behance) : ?> <a href="<?php echo $behance; ?>" class="px-1" rel="nofollow" target="_blank"><i class="fa-brands fa-behance"></i></a><?php endif; ?>
+                                <?php if ($github) : ?> <a href="<?php echo $github; ?>" class="px-1" rel="nofollow" target="_blank"><i class="fa-brands fa-github"></i></a><?php endif; ?>
+
                             </h5>
 
                             <p class="card-text mb-1"><?php echo get_the_author_meta('description'); ?>
