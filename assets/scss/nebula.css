@@ -2977,6 +2977,7 @@ textarea.form-control-lg {
 .input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n + 3) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  border-top-left-radius: 10px;
 }
 
 .input-group.has-validation > :nth-last-child(n + 3):not(.dropdown-toggle):not(.dropdown-menu),
@@ -2989,6 +2990,7 @@ textarea.form-control-lg {
   margin-left: -1px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  border-bottom-right-radius: 10px;
 }
 
 .valid-feedback {
@@ -11949,6 +11951,7 @@ SOFTWARE.
 **********************************/
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
 }
 
 pre {
@@ -12189,7 +12192,6 @@ blockquote {
 
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.8);
-  text-transform: uppercase;
 }
 
 .navbar-dark .navbar-nav .current-menu-item .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link:hover {
@@ -12661,7 +12663,7 @@ blockquote {
 
 .horizontal-post-feed .card-text {
   color: #000000;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size:0.9em;
 }
 
 .ux-profile-sm {
@@ -12942,7 +12944,6 @@ footer .right-footer-nav {
 
 .vertical-post-related .card-text {
   color: #000000;
-  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .pagination {

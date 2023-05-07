@@ -16,6 +16,7 @@ Para Editar los estilos, buscar mediante el comando CTRL+F: "Main Styles", y edi
 body{
     //font-family: 'Lato', sans-serif;
     font-family: 'Open Sans', sans-serif;
+    font-size:18px;
 }
 pre {
     margin-top: 0;
@@ -215,7 +216,6 @@ blockquote{
 
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255, 255, 255,0.80);
-    text-transform: uppercase;
 }
 
 .navbar-dark .navbar-nav .current-menu-item .nav-link , .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link:hover {
@@ -580,7 +580,6 @@ blockquote{
     }
     .card-text{
         color: #000000;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     
 }
@@ -800,7 +799,6 @@ footer{
     }
     .card-text{
         color: #000000;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     
 }

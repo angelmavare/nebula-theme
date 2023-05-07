@@ -48,7 +48,7 @@
                                     </div>
 									<!-- <span class="text-light-orange fw-bold text-decoration-none">Categoria</span> -->
                                     <h1 class="text-white"><?php the_title(); ?></h1>
-                                    <p class="text-white serif-text"><?php echo substr(get_the_excerpt(), 0,600)."... "?></p>
+                                    <p class="text-white"><?php echo substr(get_the_excerpt(), 0,600)."... "?></p>
                                         <div class="ux-meta-post mt-2">
                                             <img class="ux-profile-sm d-none d-sm-inline-block" src="<?php print get_avatar_url(get_the_author_meta( 'user_email' )); ?>" alt=""><small class="ux-post-editor text-white"> Por <span class="link-profile text-white" ><?php echo get_the_author(); ?></span></small>
                                          </div>
