@@ -58,7 +58,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!----NAVBAR----->
         <header class="header">
             <nav class="navbar navbar-expand-lg navbar-dark bg-darkgray">
-                <div class="container-fluid">
+                <div class="container">
 					<?php 
 						$custom_logo_id = get_theme_mod( 'custom_logo' );
 						$custom_logo_url = wp_get_attachment_image_url( $custom_logo_id , 'full' );

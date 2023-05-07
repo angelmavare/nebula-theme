@@ -524,7 +524,11 @@ img {
 figure {
 	margin: 1em 0;
 }
-
+figcaption{
+	color: #8f8f90;
+    font-size: 0.9em;
+    font-style: italic;
+}
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
@@ -552,6 +556,10 @@ table {
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+	max-width: 800px;
+    	margin-left: auto;
+    	margin-right: auto;
+    	line-height: 1.8;
 }
 
 .page-links {
